@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      text-decoration: none;
+
+    }
+    .navbar{
+      position: fixed;
+      width:100%;
+      background: darkcyan;
+      font-family: 'Courier New', Courier, monospace;
+      padding:10px 8px;
+    }
+    .maxwidth{
+      max-width: 1300px;
+      padding: 2px 70px;
+      margin:auto;
+    }
+    .navbar .maxwidth{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar .logo a{
+      color: black;
+      font-size: 55px;
+      font-weight: 900;
+      
+    }
+    .navbar .menu a{
+      color: black;
+      font-size: 20px;
+      font-weight: 600;
+      margin-left: 20px;
+      
+    }
+    .navbar .menu a:hover{
+      color: red;
+    }
+
+    .home{
+      display: flex;
+      font-family: 'Courier New', Courier, monospace;
+      background: lightcyan;
+      height: 100vh;
+    }
+    .home .maxwidth{
+      margin:auto 0 auto 40px;
+    }
+    .home .text1{
+      font-size: 30px;
+      font-weight: 300;
+    }
+    .home .text2{
+      font-size: 75px;
+      font-weight: 700;
+      margin-left: 20px;
+    }
+    .home .text3{
+      font-size: 30px;
+      margin-left: 40px;
+    }
+    .home .text3 span{
+      font-weight: 900;
+      color:black;
+    }
+    
+
+    .about{
+      display: flex;
+      font-family: 'Courier New', Courier, monospace;
+      background: lightcyan;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    
+
+    }
+    .about .maxwidth{
+      margin:auto 0 auto 40px;
+    }
+    .about .maxwidth h2{
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    
+    .about .maxwidth .columnright p{
+      font-size: 25px;
+      font-weight: 100;
+      text-align: left;
+    }
+
+    .about .maxwidth .columnleft img{
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      align-items: left;
+      justify-items: left;
+      margin-left: 1cm;
+    }
+    .education{
+      display: flex;
+      font-family: 'Courier New', Courier, monospace;
+      background: lightcyan;
+      height: 100vh;
+    }
+    .education .maxwidth h2{
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      justify-content: center;
+      padding: 10px;
+      margin-left: 1cm;
+  
+    }
+    .table-container {
+      width: 80%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      border: 1px solid #ccc;
+    }
+
+    .table-container th,
+    .table-container td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .table-container th {
+      background-color: darkcyan;
+    }
+
+    .table-container caption {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      background-color: darkcyan;
+      padding: 8px;
+    }
+    .projects {
+       max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+       display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .project h2 {
+      margin: 15px 0 10px;
+    }
+    .project p {
+      color: gray;
+    }
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: darkcyan;
+    }
+    .project a:hover {
+      text-decoration: underline;
+    }
+     .contact{
+      display: flex;
+      font-family: 'Courier New', Courier, monospace;
+      background: lightcyan;
+      height: 100vh;
+      padding: 40px;
+
+    }
+    .contact .maxwidth h2{
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      padding: 10px;
+    }
+    .contact .columnleft{
+      display: flex;
+      gap: 40px;
+      justify-content: left;
+      flex-wrap: wrap;
+      font-size: 20px;
+    }
+    .contactinfo {
+       max-width: 300px;
+    }
+    .contact .columnright{
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
+      
+      display: flex;
+      gap: 15px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+    }
+    .contact .columnright h2{
+      font-weight: 600;
+      font-size: 30px;
+    }
+    .contactright input,
+    .contactright textarea {
+       padding: 10px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+    }
+    .contact .columnright button{
+      background: darkcyan;
+      color: white;
+      border: none;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="maxwidth">
+      <div class="logo"><a href="#">PORTFOLIO</a></div>
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Project</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <sectoin class="home" id="home">
+    <div class="maxwidth">
+      <div class="homecontent">
+        <div class="text1">Hello,My Name is</div>
+        <div class="text2">DHIVYA V</div>
+        <div class="text3">    I am beginner <span>Python developer</span> eager to 
+          bring ideas to life through creativity and code.<br>
+          <p> And love turning complex problems into simple, beautiful solutions.
+          With a strong foundation in languages.I'm ready to step into 
+        the professional world and make an impact.</p> <br>
+          <p>I am looking for opportunities to grow ,learn,and contribute to real-world projects.</p>
+        </div>
+      </div>
+    
+    </div>
+
+  </sectoin><br>
+
+  <section class="about" id="about">
+    <div class="maxwidth"><br>
+      <h2>About Me</h2>
+      <div class="columnleft">
+        <img src="images/divii.JPG" alt="dhivya" width="200px">
+      </div>
+      <div class="columnright">
+        <p>I am passionate about front-end and back-end develpoment and creating engaging 
+          web experiences.Eager to join a dynamic team and grow in the tech industry.
+        I'm currently open to freelance opportunities and excited to collaborate 
+        on impactful projects. </p><br>
+        <h2><b>LIFESTYLE</b></h2>
+        <p>"Early bird,coffee enthusiast and always up for morning yoga and meditation.
+          I'm the kind of person who googles everything- curiosity drives my creativity.
+        </p>
+        <h2><b>PERSONAL HIGHLIGHTS</b></h2>
+       <p>Blended with high energy level & confidence, sincere and committed person.<br>
+        Quick learner, ability to work hard & smart and perform well under pressure.</p>
+   
+      </div>
+    </div>
+  </section>
+
+  <section class="education" id="education">
+        <div class="maxwidth">
+    <table class="table-container">
+    <caption>ACADEMIC CREDENTIALS</caption>
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Institution</th>
+        <th>Board/University</th>
+        <th>Course Duration</th>
+        <th>CGPA/Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SSLC</td>
+        <td>A.K.T Academy Matric Higher Secondary School, Kallakurichi</td>
+        <td>Matriculation</td>
+        <td>2010-2011</td>
+        <td>92%</td>
+      </tr>
+      <tr>
+        <td>HSC</td>
+        <td>A.K.T Academy Matric Higher Secondary School, Kallakurichi</td>
+        <td>Stateboard</td>
+        <td>2012-2013</td>
+        <td>87%</td>
+      </tr>
+      <tr>
+        <td>BE (EEE)</td>
+        <td>Velalar College of Engineering and Technology, Erode</td>
+        <td>Anna University, Chennai</td>
+        <td>2013-2017</td>
+        <td>7.5</td>
+      </tr>
+      <tr>
+        <td>MBA (HR)</td>
+        <td>Periyar University,Salem</td>
+        <td>Periyar University,Salem</td>
+        <td>2017-2019</td>
+        <td>70%</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </section>
+
+<section class="projects" id="projects">
+  <div class="maxwidth">
+    <h2 style="text-align:center; font-size: 30px; margin-bottom: 20px;">Projects</h2>
+
+    <div class="project">
+      <h2>E-Learning Platform</h2>
+      <p>A responsive online learning website built with HTML/CSS.</p>
+      <a href="https://dhivya191116.github.io/project1/PROJECT1/index.html">View Project</a>
+    </div>
+
+    <div class="project">
+      <h2>Photography Portfolio</h2>
+      <p>A showcase of photographic work using modern web layout.</p>
+      <a href="https://dhivya191116.github.io/project2/project2/index.html">View Project</a>
+    </div>
+
+    <div class="project">
+      <h2>Restaurant Menu Card</h2>
+      <p>A digital menu card UI for a restaurant.</p>
+      <a href="https://dhivya191116.github.io/project3/project3/index.html">View Project</a>
+    </div>
+  </div>
+</section>
+  <section class="contact" id="contact">
+    <div class="maxwidth">
+      <h2>Contact me</h2>
+  <div class="columnleft">
+    <div class="contactinfo">
+      <h3>Get in Touch</h3>
+      <p>Feel free to reach out if you're looking for a developer,
+        have a question, or just want to connect.</p>
+      <p><b>Email:</b> dhivi****.com</p>
+      <p><b>Phone:</b> +91 94********</p>
+      <p><b>Github:</b><a href="https://github.com/dashboard">visit</a></p>
+      <p><b>LinkedIn:</b><a href="https://www.linkedin.com/feed/?trk=guest_homepage-
+        basic_google-one-tap-submit">visit</a></p>
+      <p><b>Location:</b> Guduvancherry,Chennai</p>
+    </div>
+    
+    <form class="contactright">
+      <h3>Contact Form</h3>
+      <label for="name"></label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+      <label for="email"></label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+      <label for="subject"></label>
+      <input type="text" id="subject" name="subject" placeholder="Subject" required><br><br>
+      <label for="msg"></label>
+      <textarea placeholder="Your Message" rows="5" required></textarea><br><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  </div>
+</section>
+  
+</body>
+</html>
